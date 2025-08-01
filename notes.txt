@@ -1,0 +1,26 @@
+HOW THE COMMUNITIES WORKS
+    1. now it is entirely the feauture of clerk i.e clerk organisations
+    2. But that will be created in clerk, so we need to extract that data and putin our apps database
+    3. And that is doable with WEBHOOKS ,
+    
+
+HOW WEBHOOKS WORKS
+A webhook is a way for one application to send real-time data to another application when a specific event happens. It’s like a reverse API call—instead of your app polling or asking for data, the other service pushes it to your app automatically.
+
+🔧 How It Works:
+You register a URL (your webhook endpoint) with the service (like GitHub, Stripe, or Clerk).
+
+When an event occurs, the service sends an HTTP POST request to your URL with the relevant data (usually in JSON format).
+
+ Example:
+You’re building a payment system using Stripe:
+
+You set up a webhook to https://yourdomain.com/webhook.
+
+When a payment is successful, Stripe sends a POST request to that URL with payment details.
+
+Your server receives the data and updates the user’s order status.
+
+
+SO WE SETUP A webhooks folder in api folder and set it up
+(GO ON CLERK DOCS FOR DETAILS)
