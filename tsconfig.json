@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    // CHANGE THIS LINE
+    "target": "es2017", // Or "esnext" for the very latest features
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
