@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    serverActions: true,
-    serverComponentsExternalPackages: ["mongoose"],
+    serverActions: {}, // changed from true to an empty object
   },
+  serverExternalPackages: ["mongoose"], // moved out of experimental
   images: {
     remotePatterns: [
       {
