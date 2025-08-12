@@ -157,6 +157,33 @@ export async function deleteThread(id: string, path: string): Promise<void> {
   }
 }
 
+export async function fetchUserPosts(userId: string){
+    try{    
+        connectToDB();
+
+        // find all threads authored by user with given userId
+        const threads = await User.findOne({id : userId})
+            .populate({
+                path : 'threads',
+                model : Thread,
+                populate:{
+                    path : 'children',
+                    model :Thread,
+                    populate:{
+                        path :'author',
+                        model :User,
+                        select :"name image id"
+                    }
+                }
+            })
+
+            return threads;
+    }
+    catch(error: any){
+        console.log(error.message)
+    }
+}
+
 export async function fetchThreadById(threadId: string) {
   connectToDB();
 
