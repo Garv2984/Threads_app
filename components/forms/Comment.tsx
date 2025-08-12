@@ -18,7 +18,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { commentValidation } from '@/lib/validations/thread';
 import Image from "next/image";
 import { currentUser } from "@clerk/nextjs/server";
-import { addCoomentToThread } from "@/lib/actions/thread.actions";
+import { addCommentToThread } from "@/lib/actions/thread.actions";
 
 
 interface Props{
@@ -41,7 +41,7 @@ const Comment = ({threadId , currentUserImage , currentUserId} : Props) =>{
     })
 
     const onSubmit= async (values: z.infer<typeof commentValidation>) =>{
-        await addCoomentToThread(
+        await addCommentToThread(
             threadId, 
             values.thread , 
             currentUserId, 
